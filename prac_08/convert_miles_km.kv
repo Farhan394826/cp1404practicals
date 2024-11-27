@@ -1,0 +1,31 @@
+
+BoxLayout:
+    orientation: 'vertical'
+    padding: 10
+    spacing: 10
+
+    BoxLayout:
+        orientation: 'horizontal'
+        spacing: 10
+        Button:
+            text: "Up"
+            on_press: app.handle_increment(input_miles.text, 1)
+        TextInput:
+            id: input_miles
+            text: ''
+            hint_text: "Enter miles"
+            font_size: 18
+            on_text: app.handle_calculate(input_miles.text)
+        Button:
+            text: "Down"
+            on_press: app.handle_increment(input_miles.text, -1)
+
+    Label:
+        id: output_km
+        text: app.output_km
+        font_size: 18
+        color: (1, 1, 0, 1)
+
+    Label:
+        text: "Tip: Enter miles, adjust with Up/Down, or type a value directly."
+        font_size: 14
